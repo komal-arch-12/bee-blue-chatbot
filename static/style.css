@@ -1,0 +1,302 @@
+/* RESET */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    /* BACKGROUND IMAGE */
+    background: url("images/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+
+    overflow-x: hidden;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    background: rgba(255,255,255,0.3);
+}
+
+/* =========================
+   FLOATING BEE BUTTON
+========================= */
+.app-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    background-color: #7E57C2;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    z-index: 9999;
+
+    transition: transform 0.2s ease;
+}
+
+.app-icon:hover {
+    transform: scale(1.08);
+}
+
+/* =========================
+   CHATBOX
+========================= */
+.chat-container {
+    width: 350px;
+    height: 500px;
+
+    background-color: rgba(209,196,233,0.95);
+    backdrop-filter: blur(12px);
+
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+
+    z-index: 9998;
+}
+
+.chat-container.active {
+    transform: scale(1);
+}
+
+/* HEADER */
+.chat-header {
+    background-color: #7E57C2;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* CHAT MESSAGES */
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    margin: 6px 0;
+    padding: 10px 14px;
+    border-radius: 16px;
+    max-width: 75%;
+    clear: both;
+}
+
+.user-message {
+    background-color: #7E57C2;
+    color: white;
+    float: right;
+}
+
+.bot-message {
+    background-color: #EDE7F6;
+    color: black;
+    float: left;
+}
+
+/* INPUT */
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+}
+
+.chat-input button {
+    padding: 12px;
+    background-color: #7E57C2;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* FEATURE BUTTONS */
+.feature-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.feature-buttons button {
+    flex: 1 1 45%;
+    padding: 8px;
+    border: none;
+    border-radius: 12px;
+    background-color: #9575CD;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.feature-buttons button:hover {
+    background-color: #7E57C2;
+}
+
+/* =========================
+   LEFT SIDE BOXES
+========================= */
+.left-section {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    position: fixed;
+    left: 20px;
+    top: 20px;
+}
+
+.info-box {
+    background: rgba(237,231,246,0.95);
+    border-left: 6px solid #7E57C2;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.info-box h2 {
+    margin-top: 0;
+    color: #4A148C;
+}
+
+.info-box p {
+    color: #311B92;
+}
+
+.info-box input {
+    padding: 8px;
+    width: 70px;
+    border-radius: 8px;
+    border: 1px solid #7E57C2;
+}
+
+.info-box button {
+    padding: 8px 14px;
+    background-color: #7E57C2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* MOOD */
+.mood-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.mood-options button {
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.mood-options button:hover {
+    transform: scale(1.3);
+}
+
+#mood-feedback,
+#game-feedback {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #311B92;
+}
+/* =========================
+   WELCOME PANEL
+========================= */
+/* CENTER WELCOME PANEL */
+#welcome-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(4px);
+
+    z-index: 997;
+}
+
+.welcome-card {
+    background: rgba(255,255,255,0.9);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 380px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: fadeIn 1s ease;
+}
+
+.welcome-card h1 {
+    color: #6A5ACD;
+    margin-bottom: 10px;
+}
+
+.welcome-card p {
+    color: #444;
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.welcome-card button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #7E57C2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.welcome-card button:hover {
+    background: #673AB7;
+}
+
+/* animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
