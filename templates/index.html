@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEE-BLUE Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- 🌿 CENTER WELCOME PANEL -->
+<div id="welcome-panel">
+    <div class="welcome-card">
+        <h1>🐝 Welcome to BEE-BLUE</h1>
+        <p>I’m Blue-Bee, your calm little companion.</p>
+        <p>Take a breath. This is your safe space.</p>
+        <button onclick="startChat()">Start chatting</button>
+    </div>
+</div>
+
+<!-- LEFT SIDE PANELS -->
+<div class="left-section">
+
+    <!-- Daily Inspiration -->
+    <div class="info-box">
+        <h2>🌟 Daily Inspiration</h2>
+        <p id="daily-quote">Your positive energy today will guide you through!</p>
+    </div>
+
+    <!-- Mind Game -->
+    <div class="info-box">
+        <h2>🧠 Mind Game</h2>
+        <p>Guess the number (1-10)</p>
+        <input type="number" id="game-input" min="1" max="10" placeholder="Enter number">
+        <button onclick="checkGuess()">Submit</button>
+        <p id="game-feedback"></p>
+    </div>
+
+    <!-- Mood Tracker -->
+    <div class="info-box">
+        <h2>💭 How are you feeling?</h2>
+        <div class="mood-options">
+            <button onclick="recordMood('😊')">😊</button>
+            <button onclick="recordMood('😔')">😔</button>
+            <button onclick="recordMood('😡')">😡</button>
+            <button onclick="recordMood('😌')">😌</button>
+            <button onclick="recordMood('😢')">😢</button>
+            <button onclick="recordMood('😃')">😃</button>
+        </div>
+        <p id="mood-feedback"></p>
+    </div>
+
+</div>
+
+<!-- FLOATING BEE BUTTON -->
+<div class="app-icon" onclick="toggleChat()">BEE-BLUE 🐝</div>
+
+<!-- CHAT POPUP -->
+<div class="chat-container" id="chat-container">
+
+    <div class="chat-header">
+        <h2>BEE-BLUE 🐝</h2>
+        <button class="close-btn" onclick="toggleChat()">✖</button>
+    </div>
+
+    <div class="chat-box" id="chat-box"></div>
+
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Talk to me...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <div class="feature-buttons">
+        <button onclick="useFeature('joke')">Joke 🤭</button>
+        <button onclick="useFeature('song')">Songs/Poems 🎶</button>
+        <button onclick="useFeature('game')">Play Game 🎮</button>
+        <button onclick="clearChat()">Clear Chat 🗑</button>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
