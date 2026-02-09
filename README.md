@@ -1,2 +1,2 @@
 # bee-blue-chatbot
-Bee-Blue – a calming AI companion chatbot for students.
+BEE-BLUE – Your Calm Corner on Busy Days
